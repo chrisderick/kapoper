@@ -35,9 +35,9 @@
 				print "<td>".$row["posicao_idol"]."</td>";
 				if($row["solo_idol"] == 1){
                 print "<td>Sim</td>";
-            }elseif($row["sexo_idol"] == 0){
+				}elseif($row["solo_idol"] == 0){
                 print "<td>Não</td>";
-            }
+				}
 			print "</tr>";
 		}
 		print "</table>";

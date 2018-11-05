@@ -10,12 +10,23 @@
 		print "<table class='table table-bordered table-striped table-hover'>";
 			print "<tr>";
 				print "<th>#</th>";
-				print "<th>Nome do Grupo</th>";
+				print "<th>Nome</th>";
+				print "<th>Tipo</th>";
+				print "<th>Debut</th>";
+				//colocar o disband;
 			print "</tr>";
 		while($row = $res->fetch_assoc()){
 			print "<tr>";
 				print "<td>".$row["id_grupo"]."</td>";
 				print "<td>".$row["nome_grupo"]."</td>";
+				if($row["tipo_grupo"] == 0){
+                print "<td>Girl Group</td>";
+				}elseif($row["tipo_grupo"] == 1){
+                print "<td>Boy Group</td>";}
+				elseif($row["tipo_grupo"] == 2){
+                print "<td>Mixed Group</td>";}
+				print "<td>".$row["debut_grupo"]."</td>";
+				//colocar o disband;
 			print "</tr>";
 		}
 		print "</table>";

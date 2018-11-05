@@ -1,14 +1,12 @@
 <?php
 
-	$nome = @$_REQUEST["nome_idol"];
-	$sexo = @$_REQUEST["sexo_idol"];
-	$nasc = @$_REQUEST["nasc_idol"];
-	$grupo = @$_REQUEST["grupo_id_grupo"];
-	$label = @$_REQUEST["gravadora_id_gravadora"];
+	$nome = @$_REQUEST["nome_gravadora"];
+	$fund = @$_REQUEST["fundacao_gravadora"];
+	$ceo = @$_REQUEST["ceo_gravadora"];
 
 	switch (@$_REQUEST["acao"]) {
 		case "cadastrar":
-			$sql = "INSERT INTO idol (nome_idol) VALUES ('$nome')";
+			$sql = "INSERT INTO gravadora (nome_gravadora, fundacao_gravadora, ceo_gravadora) VALUES ('$nome','$fund','$ceo')";
 			$res = $conn->query($sql);
 
 			if($res==true){

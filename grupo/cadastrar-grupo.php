@@ -1,17 +1,21 @@
 <h1 class="text-center m-4">Cadastro de Grupos</h1>
 
 	<!-- Formulário de Cadastro !-->
-<form action="index.php?page=sal-grupos&acao=cadastrar" method="POST">
+<form action="index.php?page=sal-grupo&acao=cadastrar" method="POST">
 
-	<div class="container">
+	<div class="container col-10">
 		<div class="row">
-			<div class="form-group col-8">
+			<div class="form-group col-6">
 				<label>Nome</label>
 				<input type="text" name="nome_grupo" class="form-control">
 			</div>
-			<div class="form-group col-4">
+			<div class="form-group col-6">
 				<label>Tipo</label>
-				<input type="number" name="tipo_grupo" class="form-control">
+				<select class="form-control" name="tipo_grupo">
+					<option value=0>Girl Group</option>
+					<option value=1>Boy Group</option>
+					<option value=2>Mixed Group</option>
+				</select>
 			</div>
 		</div>
 		<div class="row">

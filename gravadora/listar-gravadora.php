@@ -10,12 +10,16 @@
 		print "<table class='table table-bordered table-striped table-hover'>";
 			print "<tr>";
 				print "<th>#</th>";
-				print "<th>Nome da Gravadora</th>";
+				print "<th>Nome</th>";
+				print "<th>Fundada em</th>";
+				print "<th>CEO</th>";
 			print "</tr>";
 		while($row = $res->fetch_assoc()){
 			print "<tr>";
 				print "<td>".$row["id_gravadora"]."</td>";
 				print "<td>".$row["nome_gravadora"]."</td>";
+				print "<td>".$row["fundacao_gravadora"]."</td>";
+				print "<td>".$row["ceo_gravadora"]."</td>";
 			print "</tr>";
 		}
 		print "</table>";
