@@ -1,0 +1,3 @@
+- Banco:
+	Crud(create e list) do grupo/gravadora
+- Front-end;
