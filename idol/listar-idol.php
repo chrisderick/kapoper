@@ -1,8 +1,8 @@
 <h1 class="text-center m-4">Lista de Idols</h1>
 <?php
 	$sql = "SELECT * FROM idol
-			  INNER JOIN grupo ON grupo_id_grupo=id_grupo
-           INNER JOIN gravadora ON gravadora_id_gravadora=id_gravadora";
+			INNER JOIN grupo ON grupo_id_grupo=id_grupo
+            INNER JOIN gravadora ON gravadora_id_gravadora=id_gravadora";
 	$res = $conn->query($sql) or die($conn->error);
 	
 	$qtd = $res->num_rows;
@@ -19,6 +19,7 @@
 				print "<th>Gravadora</th>";
 				print "<th>Posição</th>";
 				print "<th>Artista solo?</th>";
+				print "<th>Ações</th>";
 			print "</tr>";
 		while($row = $res->fetch_assoc()){
 			print "<tr>";
@@ -38,6 +39,10 @@
 				}elseif($row["solo_idol"] == 0){
                 print "<td>Não</td>";
 				}
+				print "<td>
+							<button onclick=\"location.href='index.php?page=edit-idol&id_idol=".$row["id_idol"]."';\" class='btn btn-success'>Editar</button>
+							<button class ='btn btn-danger'>Excluir</button>
+					   </td>";
 			print "</tr>";
 		}
 		print "</table>";
