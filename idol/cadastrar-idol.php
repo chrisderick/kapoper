@@ -2,16 +2,7 @@
 <html>
 
 <head>
-	<style>
-		body{
-			background: url(img/loonaicecream.png) no-repeat center center fixed; 
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-		
-		}
-	</style>
+	
 </head>
 
 <body>
@@ -59,52 +50,58 @@
 				</div>
 			</div>
 
-			<div class="col-6 mx-auto">
-				<div class="form-group">
-					<label>Gravadora</label>
-					<?php
-						$query = "SELECT id_gravadora,nome_gravadora FROM gravadora";
-						$res = mysqli_query($conn, $query);
-
-						$op = "<select class='form-control' name='gravadora_id_gravadora'>";
-
-						while ($row_gravadora = mysqli_fetch_assoc($res)){
-							@$op .= "<option value = '{$row_gravadora ['id_gravadora']}'>{$row_gravadora ['nome_gravadora']}</option>";
-						}
-						$op .= "</select>";
-
-						echo $op;
-					?>
-				</div>
-			 </div>
+			<div class="form-group col-6">
+					<label>Posição</label>
+					<input type="text" name="posicao_idol" class="form-control">
+			</div>
+			
 			</div>
 
 			<div class="row">
-				<div class="form-group col-10">
-					<label>Posição</label>
-					<input type="text" name="posicao_idol" class="form-control">
-				</div>
-			
-				<div class="form-group col-2 ">
-					<p>É artista solo? &nbsp;</p>
-				<div class="form-check-inline">
-					<label class="form-check-label">
-						<input type="radio" name="solo_idol" class="form-check-input" value="1">Sim
-					</label>
-				</div>
-				<div class="form-check-inline">
-					<label class="form-check-label">
-						<input type="radio" name="solo_idol" class="form-check-input" value="0">Não
-					</label>
-				</div>
-				</div>
-			</div>
 
+				<div class="form-group col-2 mx-auto">
+					<label>É artista solo?</label>
+					<select class="form-control" id="solo_idol" onchange="optionCheck()">
+
+						<option value="1">Sim</option>
+						<option value="0">Não</option>
+					</select>
+				</div>
+
+				<div class="form-group col-10 mx-auto" id="gravadora" style="visibility: hidden;">
+						<label>Gravadora</label>
+						<?php
+							$query = "SELECT id_gravadora,nome_gravadora FROM gravadora";
+							$res = mysqli_query($conn, $query);
+
+							$op = "<select class='form-control' name='gravadora_id_gravadora'>";
+
+							while ($row_gravadora = mysqli_fetch_assoc($res)){
+								@$op .= "<option value = '{$row_gravadora ['id_gravadora']}'>{$row_gravadora ['nome_gravadora']}</option>";
+							}
+							$op .= "</select>";
+
+							echo $op;
+						?>
+			 	</div>
+
+			 	<script type="text/javascript">
+				    function optionCheck(){
+				        var option = document.getElementById("solo_idol").value;
+				        if(option == 1){
+				            document.getElementById("gravadora").style.visibility ="visible";
+				        }else if(option == 0){
+				        	document.getElementById("gravadora").style.visibility ="hidden";
+				        }
+			        }
+		    	</script>
+
+ 			</div>
+
+ 			
 			<div class="form-group">
 					<button class="btn btn-outline-info btn-block" type="submit">Enviar</button>
 			</div>
-		</div>
-
 	</form>
 </body>
 

@@ -13,7 +13,8 @@
 				print "<th>Nome</th>";
 				print "<th>Tipo</th>";
 				print "<th>Debut</th>";
-				//colocar o disband;
+				//TODO colocar o disband;
+				print "<th>Ações</th>";
 			print "</tr>";
 		while($row = $res->fetch_assoc()){
 			print "<tr>";
@@ -26,7 +27,11 @@
 				elseif($row["tipo_grupo"] == 2){
                 print "<td>Mixed Group</td>";}
 				print "<td>".$row["debut_grupo"]."</td>";
-				//colocar o disband;
+				//TODO colocar o disband;
+				print "<td>
+							<button onclick=\"location.href='index.php?page=edit-grupo&id_grupo=".$row["id_grupo"]."';\" class='btn btn-success'>Editar</button>
+							<button class ='btn btn-danger'>Excluir</button>
+						   </td>";
 			print "</tr>";
 		}
 		print "</table>";

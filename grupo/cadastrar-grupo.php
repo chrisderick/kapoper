@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+			background: url(img/loonaicecream.png) no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		
+		}
+	</style>
+	<title></title>
+</head>
+<body>
 <h1 class="text-center m-4">Cadastro de Grupos</h1>
 
 	<!-- Formulário de Cadastro !-->
@@ -34,3 +50,6 @@
 	</div>
 
 </form>
+</body>
+
+</html>
